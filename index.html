@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>Hello Developers Day</title>
+</head>
+<body>
+  <h1>Hello Developers Day!</h1>
+
+  <script>
+
+    window.addEventListener("DOMContentLoaded", function() {
+      
+      var request = new XMLHttpRequest()
+
+      request.addEventListener("load", function() {
+        var responseData = JSON.parse(request.responseText)
+        alert(responseData.message)
+      })
+
+      request.open("GET", "/message")
+      request.send()      
+
+    })
+
+  </script>
+</body>
+</html>
